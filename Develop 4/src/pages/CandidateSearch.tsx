@@ -1,8 +1,54 @@
 import { useState, useEffect } from 'react';
-import { searchGithub, searchGithubUser } from './Develop/src/api/API.tsx';
+import { searchGithub } from '../api/API';
 
 const CandidateSearch = () => {
-  return <h1>CandidateSearch</h1>;
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const [searchResults, setSearchResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const fetchResults = async () => {
+      if (searchTerm) {
+        setLoading(true);
+        setError('');
+        try {
+          const results = await searchGithub();
+          setSearchResults(results);
+        } catch (err) {
+          setError('Failed to fetch results');
+        } finally {
+          setLoading(false);
+        }
+      }
+    };
+
+    fetchResults();
+  }, [searchTerm]);
+
+  return (
+    <div>
+      <h1>CandidateSearch</h1>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={handleSearchChange}
+        placeholder="Search for a candidate"
+      />
+      {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      <ul>
+        {searchResults.map((result, index) => (
+          <li key={index}>{result}</li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default CandidateSearch;
