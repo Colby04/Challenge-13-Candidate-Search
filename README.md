@@ -50,6 +50,8 @@ The list of potential candidates will persist upon page reload.
 
 If there are no saved candidates, a message will indicate that no candidates have been accepted.
 
+![Screenshot](public/Challenge13.png)
+
 ## Technologies Used 
 Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
 
