@@ -8,7 +8,7 @@ const CandidateSearch = () => {
     setSearchTerm(event.target.value);
   };
 
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState<{ name: string }[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -44,7 +44,7 @@ const CandidateSearch = () => {
       {error && <p>{error}</p>}
       <ul>
         {searchResults.map((result, index) => (
-          <li key={index}>{result}</li>
+          <li key={index}>{result.name}</li>
         ))}
       </ul>
     </div>
