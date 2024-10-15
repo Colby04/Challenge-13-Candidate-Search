@@ -57,10 +57,10 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ## GitHub Link and URL
-GitHub: Colby04
-Email: cjcodes2024@gmail.com
-Repo Link: https://github.com/Colby04/Challenge-13-Candidate-Search.git
-App URL: https://challenge-13-candidate-search-xl6x.onrender.com
+- GitHub: Colby04
+- Email: cjcodes2024@gmail.com
+- Repo Link: https://github.com/Colby04/Challenge-13-Candidate-Search.git
+- App URL: https://challenge-13-candidate-search-xl6x.onrender.com
 
 
 
